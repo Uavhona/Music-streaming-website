@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PositiveBeats web application</title>
+    <meta name="description" content="Music, Musician, Bootstrap">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+    <link rel="apple-touch-icon" href="img/logo.png">
+    <meta name="apple-mobile-web-app-title" content="Flatkit">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="images/logo.png">
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="css/glyphicons.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/material-design-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/24cf2d492a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app dk" id="app">
+        <div id="aside" class="app-aside modal fade nav-dropdown">
+            <div class="left navside grey dk" data-layout="column">
+                <div class="navbar no-radius">
+                    <a href="chart.html" class="navbar-brand md">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32">
+                            <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.2)" />
+                            <circle cx="24" cy="24" r="22" fill="#1c202b" class="brand-color" />
+                            <circle cx="24" cy="24" r="10" fill="#ffffff" />
+                            <circle cx="13" cy="13" r="2" fill="#ffffff" class="brand-animate" />
+                            <path d="M 14 24 L 24 24 L 14 44 Z" fill="#FFFFFF" />
+                            <circle cx="24" cy="24" r="3" fill="#000000" />
+                        </svg>
+                        <img src="images/logo.png" alt="." class="hide">
+                        <span class="hidden-folded inline">PositiveBeats</span>
+                    </a>
+                </div>
+                <div data-flex class="hide-scroll">
+                    <nav class="scroll nav-stacked nav-active-primary">
+                        <ul class="nav" data-ui-nav>
+                            <li class="nav-header hidden-folded">
+                                <span class="text-xs text-muted">Main</span>
+                            </li>
+                            <li>
+                                <a href="home.html">
+                                    <span class="nav-text">Explore</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="browse.html">
+                                    <span class="nav-text">Browse</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chart.html">
+                                    <span class="nav-text">Charts</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="artist.html">
+                                    <span class="nav-text">Artist</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="search.html">
+                                    <span class="nav-text">Search</span>
+                                </a>
+                            </li>
+                            <li class="nav-header hidden-folded m-t">
+                                <span class="text-xs text-muted">Your collection</span>
+                            </li>
+                            <li>
+                                <a href="playlist.html">
+                                    <span class="nav-text">Playlists</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div data-flex-no-shrink>
+                    <div class="nav-fold dropup">
+                        <a data-toggle="dropdown">
+                            <span class="pull-left">
+                                <img src="img/1.jfif" alt="..." class="w-32 img-circle">
+                            </span>
+                            <span class="clear hidden-folded p-x p-y-xs">
+                                <span class="block _500 text-ellipsis"><span id="username"></span></span>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu w dropdown-menu-scale">
+                            <a class="dropdown-item" href="profile.html#profile">
+                                <span>Profile</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="signin.html">Sign out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="content" class="app-content white bg box-shadow-z2" role="main">
+            <div class="app-header hidden-lg-up white lt box-shadow-z1">
+                <div class="navbar">
+                    <a href="index.html" class="navbar-brand md">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32">
+                            <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.2)" />
+                            <circle cx="24" cy="24" r="22" fill="#1c202b" class="brand-color" />
+                            <circle cx="24" cy="24" r="10" fill="#ffffff" />
+                            <circle cx="13" cy="13" r="2" fill="#ffffff" class="brand-animate" />
+                            <path d="M 14 24 L 24 24 L 14 44 Z" fill="#FFFFFF" />
+                            <circle cx="24" cy="24" r="3" fill="#000000" />
+                        </svg>
+                        <img src="images/logo.png" alt="." class="hide">
+                        <span class="hidden-folded inline">PositiveBeats</span>
+                    </a>
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="nav-item">
+                            <a data-toggle="modal" data-target="#aside" class="nav-link">
+                                <i class="material-icons">menu</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="app-body" id="view">
+                <div class="page-content">
+                    <div class="row-col">
+                        <div class="col-lg-9 b-r no-border-md">
+                            <div class="padding">
+                                <div class="page-title m-b">
+                                    <h1 class="inline m-a-0">Charts</h1>
+                                    <div class="dropdown inline">
+                                        <button class="btn btn-sm no-bg h4 m-y-0 v-b dropdown-toggle text-primary"
+                                            data-toggle="dropdown">Last week</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Today</a>
+                                            <a href="#" class="dropdown-item active">Last week</a>
+                                            <a href="#" class="dropdown-item">Last month</a>
+                                            <a href="#" class="dropdown-item">Last year</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row item-list item-list-md item-list-li m-b">
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-8"
+                                            data-src="http://api.soundcloud.com/tracks/236288744/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/13.jpg')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source
+                                                            src="music/sosh_plata_feat._25k_thapelo_ghutra_remix_mp3_23560.mp3"
+                                                            type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">Sosh Plata</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">25k</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        250 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        100
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-11"
+                                            data-src="http://api.soundcloud.com/tracks/218060449/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/7.webp')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source src="music/Bhebha (Official Audio).mp3"
+                                                            type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">BheBha</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">ShaunMusiq f.t
+                                                        Ftears</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        4500 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        2310
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-10"
+                                            data-src="http://api.soundcloud.com/tracks/237514750/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/8.jfif')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source src="music/ke_findile_out_mp3_23483.mp3"
+                                                            type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">Ke Findile Out</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">King Monada</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        860 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        240
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-9"
+                                            data-src="http://api.soundcloud.com/tracks/264094434/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/9.jfif')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source
+                                                            src="music/2point1_stimela_official_audio_ft_ntate_stunna_nthabi_sings_mp3_23520.mp3"
+                                                            type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">Stimela</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">2 point 1</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        4500 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        2310
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-6"
+                                            data-src="http://api.soundcloud.com/tracks/236107824/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/11.webp')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source src="music/ngimoja_mp3_23540.mp3" type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">Ngimoja</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">Tyler ICU</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        330 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        220
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-7"
+                                            data-src="http://api.soundcloud.com/tracks/245566366/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/15.jpg')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source src="music/kilimanjaro_official_audio_mp3_23264.mp3"
+                                                            type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">Kilimanjaro</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">Pcee feat. Justin
+                                                        99, Mema_Percent & Mr JazziQ</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        200 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        510
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-1"
+                                            data-src="http://api.soundcloud.com/tracks/269944843/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/10.jpg')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source src="music/Umbayimbayi.mp3" type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">Umbayimbayi</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">Sjava</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        3200 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        210
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-12"
+                                            data-src="http://api.soundcloud.com/tracks/174495152/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/6.jpg')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source
+                                                            src="music/lwah_ndlunkulu_ngiyeza_official_audio_mp3_23283.mp3"
+                                                            type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">Ngiyeza</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">Lwah Ndlunkulu</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        860 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        240
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-3"
+                                            data-src="http://api.soundcloud.com/tracks/79031167/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/14.png')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source src="music/sam_smith_kim_petras_unholy_mp3_23591.mp3"
+                                                            type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">Unholy</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">Sam Smith</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        300 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        10
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="item r" data-id="item-2"
+                                            data-src="http://api.soundcloud.com/tracks/259445397/stream?client_id=a10d44d431ad52868f1bce6d36f5234c">
+                                            <div class="item-media">
+                                                <a href="track.detail.html" class="item-media-content"
+                                                    style="background-image: url('img/12.jpg')"></a>
+                                                <div class="item-overlay center" style="left: 35px;">
+                                                    <audio controls>
+                                                        <source src="music/mina_nawe_mp3_23252.mp3" type="audio/mpeg">
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-overlay bottom text-right">
+                                                    <a href="#" class="btn-favorite">
+                                                        <i class="fa fa-heart-o"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-more" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu pull-right black lt"></div>
+                                                </div>
+                                                <div class="item-title text-ellipsis">
+                                                    <a href="track.detail.html">Mina Nawe</a>
+                                                </div>
+                                                <div class="item-author text-sm text-ellipsis">
+                                                    <a href="artist.detail.html" class="text-muted">Soa Mattrix</a>
+                                                </div>
+                                                <div class="item-meta text-sm text-muted">
+                                                    <span class="item-meta-stats text-xs item-meta-right">
+                                                        <i class="fa fa-play text-muted"></i>
+                                                        30 <i class="fa fa-heart m-l-sm text-muted"></i>
+                                                        10
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="switcher">
+            <div class="switcher white" id="sw-theme">
+                <a href="#" data-ui-toggle-class="active" data-ui-target="#sw-theme" class="white sw-btn">
+                    <i class="fa fa-gear text-muted"></i>
+                </a>
+                <div class="box-header">
+                    <strong>Theme Switcher</strong>
+                </div>
+                <div class="box-divider"></div>
+                <div class="box-body">
+                    <p id="settingLayout" class="hidden-md-down">
+                        <label class="md-check m-y-xs" data-target="folded">
+                            <input type="checkbox">
+                            <i class="green"></i>
+                            <span>Folded Aside</span>
+                        </label>
+                        <label class="m-y-xs pointer" data-ui-fullscreen data-target="fullscreen">
+                            <span class="fa fa-expand fa-fw m-r-xs"></span>
+                            <span>Fullscreen Mode</span>
+                        </label>
+                    </p>
+                    <p>Colors:</p>
+                    <p data-target="color">
+                        <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md">
+                            <input type="radio" name="color" value="primary">
+                            <i class="primary"></i>
+                        </label>
+                        <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md">
+                            <input type="radio" name="color" value="accent">
+                            <i class="accent"></i>
+                        </label>
+                        <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md">
+                            <input type="radio" name="color" value="warn">
+                            <i class="warn"></i>
+                        </label>
+                        <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md">
+                            <input type="radio" name="color" value="success">
+                            <i class="success"></i>
+                        </label>
+                        <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md">
+                            <input type="radio" name="color" value="info">
+                            <i class="info"></i>
+                        </label>
+                        <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md">
+                            <input type="radio" name="color" value="blue">
+                            <i class="blue"></i>
+                        </label>
+                        <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md">
+                            <input type="radio" name="color" value="warning">
+                            <i class="warning"></i>
+                        </label>
+                        <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md">
+                            <input type="radio" name="color" value="danger">
+                            <i class="danger"></i>
+                        </label>
+                    </p>
+                    <p>Themes:</p>
+                    <div data-target="bg" class="text-u-c text-center _600 clearfix">
+                        <label class="p-a col-xs-3 light pointer m-a-0">
+                            <input type="radio" name="theme" value="" hidden>
+                            <i class="active-checked fa fa-check"></i>
+                        </label>
+                        <label class="p-a col-xs-3 grey pointer m-a-0">
+                            <input type="radio" name="theme" value="grey" hidden>
+                            <i class="active-checked fa fa-check"></i>
+                        </label>
+                        <label class="p-a col-xs-3 dark pointer m-a-0">
+                            <input type="radio" name="theme" value="dark" hidden>
+                            <i class="active-checked fa fa-check"></i>
+                        </label>
+                        <label class="p-a col-xs-3 black pointer m-a-0">
+                            <input type="radio" name="theme" value="black" hidden>
+                            <i class="active-checked fa fa-check"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
